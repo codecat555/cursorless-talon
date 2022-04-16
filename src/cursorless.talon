@@ -16,5 +16,5 @@ app: vscode
 <user.cursorless_wrapper> {user.cursorless_wrap_action} <user.cursorless_target>:
     user.cursorless_wrap(cursorless_wrap_action, cursorless_target, cursorless_wrapper)
 
-cursorless help:           user.cursorless_cheat_sheet_toggle()
-cursorless instructions:   user.cursorless_open_instructions()
+(cursorless help|curse help):           user.cursorless_cheat_sheet_toggle()
+(cursorless instructions|curse dock):   user.cursorless_open_instructions()
