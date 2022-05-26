@@ -1,5 +1,6 @@
-from talon import Context, Module
 from dataclasses import dataclass
+
+from talon import Context, Module
 
 mod = Module()
 ctx = Context()
@@ -16,7 +17,7 @@ class CustomizableTerm:
 
 
 # NOTE: Please do not change these dicts.  Use the CSVs for customization.
-# See https://github.com/pokey/cursorless-talon/blob/main/docs/customization.md
+# See https://www.cursorless.org/docs/user/customization/
 directions = [
     CustomizableTerm(
         "row", "lineNumberModulo100", "modulo100", lambda number: number - 1

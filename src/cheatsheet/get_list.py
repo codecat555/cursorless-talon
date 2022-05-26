@@ -1,6 +1,8 @@
-from ..conventions import get_cursorless_list_name
-from talon import registry
 import re
+
+from talon import registry
+
+from ..conventions import get_cursorless_list_name
 
 
 def get_list(name, descriptions=None):
@@ -39,6 +41,7 @@ def make_dict_readable(dict, descriptions=None):
 
 
 def make_readable(text):
+    text = text.replace(".", " ")
     return de_camel(text).lower().capitalize()
 
 

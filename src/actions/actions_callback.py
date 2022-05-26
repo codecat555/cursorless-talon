@@ -1,8 +1,10 @@
-from talon import Module
 from dataclasses import dataclass
-from .homophones import run_homophones_action
-from .find import run_find_action
+
+from talon import Module
+
 from .call import run_call_action
+from .find import run_find_action
+from .homophones import run_homophones_action
 
 
 @dataclass
@@ -13,7 +15,7 @@ class CallbackAction:
 
 
 # NOTE: Please do not change these dicts.  Use the CSVs for customization.
-# See https://github.com/pokey/cursorless-talon/blob/main/docs/customization.md
+# See https://www.cursorless.org/docs/user/customization/
 callbacks = [
     CallbackAction("call", "callAsFunction", run_call_action),
     CallbackAction("scout", "findInDocument", run_find_action),

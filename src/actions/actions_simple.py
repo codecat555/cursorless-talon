@@ -1,7 +1,7 @@
 from talon import Module
 
 # NOTE: Please do not change these dicts.  Use the CSVs for customization.
-# See https://github.com/pokey/cursorless-talon/blob/main/docs/customization.md
+# See https://www.cursorless.org/docs/user/customization/
 simple_action_defaults = {
     "bottom": "scrollToBottom",
     "breakpoint": "toggleLineBreakpoint",
@@ -20,13 +20,16 @@ simple_action_defaults = {
     "extract": "extractVariable",
     "float": "insertEmptyLineAfter",
     "fold": "foldRegion",
+    "follow": "followLink",
     "give": "deselect",
+    "highlight": "highlight",
     "indent": "indentLine",
     "paste to": "pasteFromClipboard",
     "post": "setSelectionAfter",
     "pour": "editNewLineAfter",
     "pre": "setSelectionBefore",
     "puff": "insertEmptyLinesAround",
+    "shuffle": "randomizeTargets",
     "reverse": "reverseTargets",
     "scout all": "findInWorkspace",
     "sort": "sortTargets",

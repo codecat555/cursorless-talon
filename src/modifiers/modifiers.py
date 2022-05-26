@@ -1,10 +1,11 @@
 from talon import app
+
 from ..csv_overrides import init_csv_and_watch_changes
-from .range_type import range_types
 from .head_tail import head_tail
+from .range_type import range_types
 
 # NOTE: Please do not change these dicts.  Use the CSVs for customization.
-# See https://github.com/pokey/cursorless-talon/blob/main/docs/customization.md
+# See https://www.cursorless.org/docs/user/customization/
 
 delimiter_inclusions = {
     "inside": "interiorOnly",

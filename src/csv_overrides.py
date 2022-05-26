@@ -1,7 +1,9 @@
-from talon import Context, Module, actions, fs, app
-from typing import Optional
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
+
+from talon import Context, Module, actions, app, fs
+
 from .conventions import get_cursorless_list_name
 
 SPOKEN_FORM_HEADER = "Spoken form"
@@ -206,7 +208,7 @@ def update_file(
                 print(f"{key}: {missing[key]}")
             print(
                 "See release notes for more info: "
-                "https://github.com/pokey/cursorless-vscode/blob/main/CHANGELOG.md"
+                "https://github.com/cursorless-dev/cursorless/blob/main/CHANGELOG.md"
             )
             app.notify(f"🎉🎉 New cursorless features; see log")
 

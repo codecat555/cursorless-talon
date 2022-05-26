@@ -1,7 +1,9 @@
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
-from talon import Module, actions, app, Context, fs, cron
+
+from talon import Context, Module, actions, app, cron, fs
+
 from ..csv_overrides import init_csv_and_watch_changes
 from .lines_number import DEFAULT_DIRECTIONS
 
@@ -13,7 +15,7 @@ mod.list("cursorless_hat_color", desc="Supported hat colors for cursorless")
 mod.list("cursorless_hat_shape", desc="Supported hat shapes for cursorless")
 
 # NOTE: Please do not change these dicts.  Use the CSVs for customization.
-# See https://github.com/pokey/cursorless-talon/blob/main/docs/customization.md
+# See https://www.cursorless.org/docs/user/customization/
 hat_colors = {
     "blue": "blue",
     "green": "green",
@@ -41,7 +43,7 @@ hat_shapes = {
 @mod.capture(
     rule="[{user.cursorless_hat_color}] [{user.cursorless_hat_shape}] <user.any_alphanumeric_key>"
 )
-def cursorless_decorated_symbol(m) -> str:
+def cursorless_decorated_symbol(m) -> dict[str, dict[str, Any]]:
     """A decorated symbol"""
     hat_color = getattr(m, "cursorless_hat_color", "default")
     try:
@@ -61,15 +63,16 @@ def cursorless_decorated_symbol(m) -> str:
 class CustomizableTerm:
     defaultSpokenForm: str
     cursorlessIdentifier: str
-    value: any
+    value: Any
 
 
 # NOTE: Please do not change these dicts.  Use the CSVs for customization.
-# See https://github.com/pokey/cursorless-talon/blob/main/docs/customization.md
+# See https://www.cursorless.org/docs/user/customization/
 special_marks = [
     CustomizableTerm("this", "currentSelection", {"mark": {"type": "cursor"}}),
     CustomizableTerm("that", "previousTarget", {"mark": {"type": "that"}}),
     CustomizableTerm("source", "previousSource", {"mark": {"type": "source"}}),
+    CustomizableTerm("nothing", "nothing", {"mark": {"type": "nothing"}}),
     # "last cursor": {"mark": {"type": "lastCursorPosition"}} # Not implemented
 ]
 
